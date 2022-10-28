@@ -20,3 +20,13 @@ C:\Users\Admin1\Documents\GitHub\OS2\obj\Debug\List.csproj.GenerateResource.cach
 C:\Users\Admin1\Documents\GitHub\OS2\obj\Debug\List.csproj.CoreCompileInputs.cache
 C:\Users\Admin1\Documents\GitHub\OS2\obj\Debug\List.exe
 C:\Users\Admin1\Documents\GitHub\OS2\obj\Debug\List.pdb
+C:\Users\User\Documents\GitHub\OS2\obj\Debug\List.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\OS2\obj\Debug\List.Form1.resources
+C:\Users\User\Documents\GitHub\OS2\obj\Debug\List.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\OS2\obj\Debug\List.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\OS2\obj\Debug\List.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\OS2\obj\Debug\List.exe
+C:\Users\User\Documents\GitHub\OS2\obj\Debug\List.pdb
+C:\Users\User\Documents\GitHub\OS2\bin\Debug\List.exe.config
+C:\Users\User\Documents\GitHub\OS2\bin\Debug\List.exe
+C:\Users\User\Documents\GitHub\OS2\bin\Debug\List.pdb

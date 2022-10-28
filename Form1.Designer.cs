@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.TBIdProcess = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TBNameProcess = new System.Windows.Forms.TextBox();
             this.TBCurrentPriority = new System.Windows.Forms.TextBox();
-            this.TB = new System.Windows.Forms.TextBox();
+            this.TBTime = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TBResouceTime = new System.Windows.Forms.TextBox();
-            this.labelResourceTime = new System.Windows.Forms.Label();
-            this.TBBasePriority = new System.Windows.Forms.TextBox();
+            this.comboBasePriority = new System.Windows.Forms.ComboBox();
             this.labelBasePriority = new System.Windows.Forms.Label();
             this.labelTimeUsed = new System.Windows.Forms.Label();
             this.labelCurrentPriority = new System.Windows.Forms.Label();
@@ -50,6 +48,7 @@
             this.buttonDeleteNewProcess = new System.Windows.Forms.Button();
             this.buttonGo = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
+            this.labelMainTimer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,158 +56,151 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(312, 49);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(331, 8);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(176, 407);
+            this.listBox1.Size = new System.Drawing.Size(1392, 484);
             this.listBox1.TabIndex = 0;
             // 
             // TBIdProcess
             // 
-            this.TBIdProcess.Location = new System.Drawing.Point(130, 32);
-            this.TBIdProcess.Margin = new System.Windows.Forms.Padding(2);
+            this.TBIdProcess.Location = new System.Drawing.Point(173, 39);
+            this.TBIdProcess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBIdProcess.Name = "TBIdProcess";
             this.TBIdProcess.ReadOnly = true;
-            this.TBIdProcess.Size = new System.Drawing.Size(90, 20);
+            this.TBIdProcess.Size = new System.Drawing.Size(119, 22);
             this.TBIdProcess.TabIndex = 1;
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(508, 82);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(1061, 13);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(332, 398);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(443, 466);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
             // 
             // TBNameProcess
             // 
-            this.TBNameProcess.Location = new System.Drawing.Point(130, 62);
-            this.TBNameProcess.Margin = new System.Windows.Forms.Padding(2);
+            this.TBNameProcess.Location = new System.Drawing.Point(173, 76);
+            this.TBNameProcess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBNameProcess.Name = "TBNameProcess";
-            this.TBNameProcess.Size = new System.Drawing.Size(90, 20);
+            this.TBNameProcess.Size = new System.Drawing.Size(119, 22);
             this.TBNameProcess.TabIndex = 11;
             // 
             // TBCurrentPriority
             // 
-            this.TBCurrentPriority.Location = new System.Drawing.Point(130, 94);
-            this.TBCurrentPriority.Margin = new System.Windows.Forms.Padding(2);
+            this.TBCurrentPriority.Location = new System.Drawing.Point(173, 116);
+            this.TBCurrentPriority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBCurrentPriority.Name = "TBCurrentPriority";
             this.TBCurrentPriority.ReadOnly = true;
-            this.TBCurrentPriority.Size = new System.Drawing.Size(90, 20);
+            this.TBCurrentPriority.Size = new System.Drawing.Size(119, 22);
             this.TBCurrentPriority.TabIndex = 12;
             // 
-            // TB
+            // TBTime
             // 
-            this.TB.Location = new System.Drawing.Point(130, 148);
-            this.TB.Margin = new System.Windows.Forms.Padding(2);
-            this.TB.Name = "TB";
-            this.TB.Size = new System.Drawing.Size(90, 20);
-            this.TB.TabIndex = 13;
+            this.TBTime.Location = new System.Drawing.Point(173, 188);
+            this.TBTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBTime.Name = "TBTime";
+            this.TBTime.Size = new System.Drawing.Size(119, 22);
+            this.TBTime.TabIndex = 13;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.TBResouceTime);
-            this.panel1.Controls.Add(this.labelResourceTime);
-            this.panel1.Controls.Add(this.TBBasePriority);
+            this.panel1.Controls.Add(this.comboBasePriority);
             this.panel1.Controls.Add(this.labelBasePriority);
             this.panel1.Controls.Add(this.labelTimeUsed);
             this.panel1.Controls.Add(this.labelCurrentPriority);
             this.panel1.Controls.Add(this.labelNameProcess);
             this.panel1.Controls.Add(this.labeldProcess);
-            this.panel1.Controls.Add(this.TB);
+            this.panel1.Controls.Add(this.TBTime);
             this.panel1.Controls.Add(this.TBCurrentPriority);
             this.panel1.Controls.Add(this.TBNameProcess);
             this.panel1.Controls.Add(this.TBIdProcess);
-            this.panel1.Location = new System.Drawing.Point(15, 49);
+            this.panel1.Location = new System.Drawing.Point(16, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 215);
+            this.panel1.Size = new System.Drawing.Size(308, 264);
             this.panel1.TabIndex = 14;
             // 
-            // TBResouceTime
+            // comboBasePriority
             // 
-            this.TBResouceTime.Location = new System.Drawing.Point(130, 172);
-            this.TBResouceTime.Margin = new System.Windows.Forms.Padding(2);
-            this.TBResouceTime.Name = "TBResouceTime";
-            this.TBResouceTime.ReadOnly = true;
-            this.TBResouceTime.Size = new System.Drawing.Size(90, 20);
-            this.TBResouceTime.TabIndex = 21;
-            // 
-            // labelResourceTime
-            // 
-            this.labelResourceTime.AutoSize = true;
-            this.labelResourceTime.Location = new System.Drawing.Point(29, 179);
-            this.labelResourceTime.Name = "labelResourceTime";
-            this.labelResourceTime.Size = new System.Drawing.Size(96, 13);
-            this.labelResourceTime.TabIndex = 20;
-            this.labelResourceTime.Text = "Ресурсное время";
-            // 
-            // TBBasePriority
-            // 
-            this.TBBasePriority.Location = new System.Drawing.Point(129, 118);
-            this.TBBasePriority.Margin = new System.Windows.Forms.Padding(2);
-            this.TBBasePriority.Name = "TBBasePriority";
-            this.TBBasePriority.Size = new System.Drawing.Size(90, 20);
-            this.TBBasePriority.TabIndex = 19;
+            this.comboBasePriority.FormattingEnabled = true;
+            this.comboBasePriority.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "Height"});
+            this.comboBasePriority.Location = new System.Drawing.Point(173, 151);
+            this.comboBasePriority.Name = "comboBasePriority";
+            this.comboBasePriority.Size = new System.Drawing.Size(121, 24);
+            this.comboBasePriority.TabIndex = 22;
             // 
             // labelBasePriority
             // 
             this.labelBasePriority.AutoSize = true;
-            this.labelBasePriority.Location = new System.Drawing.Point(19, 125);
+            this.labelBasePriority.Location = new System.Drawing.Point(25, 154);
+            this.labelBasePriority.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBasePriority.Name = "labelBasePriority";
-            this.labelBasePriority.Size = new System.Drawing.Size(107, 13);
+            this.labelBasePriority.Size = new System.Drawing.Size(139, 17);
             this.labelBasePriority.TabIndex = 18;
             this.labelBasePriority.Text = "Базовый приоритет";
             // 
             // labelTimeUsed
             // 
             this.labelTimeUsed.AutoSize = true;
-            this.labelTimeUsed.Location = new System.Drawing.Point(23, 155);
+            this.labelTimeUsed.Location = new System.Drawing.Point(31, 191);
+            this.labelTimeUsed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTimeUsed.Name = "labelTimeUsed";
-            this.labelTimeUsed.Size = new System.Drawing.Size(103, 13);
+            this.labelTimeUsed.Size = new System.Drawing.Size(133, 17);
             this.labelTimeUsed.TabIndex = 17;
             this.labelTimeUsed.Text = "Время исполнения";
             // 
             // labelCurrentPriority
             // 
             this.labelCurrentPriority.AutoSize = true;
-            this.labelCurrentPriority.Location = new System.Drawing.Point(19, 101);
+            this.labelCurrentPriority.Location = new System.Drawing.Point(25, 124);
+            this.labelCurrentPriority.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCurrentPriority.Name = "labelCurrentPriority";
-            this.labelCurrentPriority.Size = new System.Drawing.Size(107, 13);
+            this.labelCurrentPriority.Size = new System.Drawing.Size(140, 17);
             this.labelCurrentPriority.TabIndex = 16;
             this.labelCurrentPriority.Text = "Текущий приоритет";
             // 
             // labelNameProcess
             // 
             this.labelNameProcess.AutoSize = true;
-            this.labelNameProcess.Location = new System.Drawing.Point(18, 69);
+            this.labelNameProcess.Location = new System.Drawing.Point(24, 85);
+            this.labelNameProcess.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNameProcess.Name = "labelNameProcess";
-            this.labelNameProcess.Size = new System.Drawing.Size(108, 13);
+            this.labelNameProcess.Size = new System.Drawing.Size(138, 17);
             this.labelNameProcess.TabIndex = 15;
             this.labelNameProcess.Text = "Название процесса";
             // 
             // labeldProcess
             // 
             this.labeldProcess.AutoSize = true;
-            this.labeldProcess.Location = new System.Drawing.Point(56, 39);
+            this.labeldProcess.Location = new System.Drawing.Point(75, 48);
+            this.labeldProcess.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labeldProcess.Name = "labeldProcess";
-            this.labeldProcess.Size = new System.Drawing.Size(69, 13);
+            this.labeldProcess.Size = new System.Drawing.Size(87, 17);
             this.labeldProcess.TabIndex = 14;
             this.labeldProcess.Text = "ID процесса";
             // 
             // buttonCreateNewProcess
             // 
-            this.buttonCreateNewProcess.Location = new System.Drawing.Point(15, 280);
+            this.buttonCreateNewProcess.Location = new System.Drawing.Point(16, 293);
+            this.buttonCreateNewProcess.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateNewProcess.Name = "buttonCreateNewProcess";
-            this.buttonCreateNewProcess.Size = new System.Drawing.Size(279, 37);
+            this.buttonCreateNewProcess.Size = new System.Drawing.Size(308, 46);
             this.buttonCreateNewProcess.TabIndex = 15;
             this.buttonCreateNewProcess.Text = "Создать новый процесс";
             this.buttonCreateNewProcess.UseVisualStyleBackColor = true;
@@ -216,9 +208,10 @@
             // 
             // buttonDeleteNewProcess
             // 
-            this.buttonDeleteNewProcess.Location = new System.Drawing.Point(15, 323);
+            this.buttonDeleteNewProcess.Location = new System.Drawing.Point(16, 346);
+            this.buttonDeleteNewProcess.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDeleteNewProcess.Name = "buttonDeleteNewProcess";
-            this.buttonDeleteNewProcess.Size = new System.Drawing.Size(279, 37);
+            this.buttonDeleteNewProcess.Size = new System.Drawing.Size(308, 46);
             this.buttonDeleteNewProcess.TabIndex = 16;
             this.buttonDeleteNewProcess.Text = "Удалить процесс из списка";
             this.buttonDeleteNewProcess.UseVisualStyleBackColor = true;
@@ -226,9 +219,10 @@
             // 
             // buttonGo
             // 
-            this.buttonGo.Location = new System.Drawing.Point(15, 366);
+            this.buttonGo.Location = new System.Drawing.Point(16, 398);
+            this.buttonGo.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGo.Name = "buttonGo";
-            this.buttonGo.Size = new System.Drawing.Size(279, 37);
+            this.buttonGo.Size = new System.Drawing.Size(308, 46);
             this.buttonGo.TabIndex = 17;
             this.buttonGo.Text = "Запуск";
             this.buttonGo.UseVisualStyleBackColor = true;
@@ -236,18 +230,30 @@
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(15, 409);
+            this.buttonStop.Location = new System.Drawing.Point(16, 451);
+            this.buttonStop.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(279, 37);
+            this.buttonStop.Size = new System.Drawing.Size(308, 46);
             this.buttonStop.TabIndex = 18;
             this.buttonStop.Text = "Стоп";
             this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+            // 
+            // labelMainTimer
+            // 
+            this.labelMainTimer.AutoSize = true;
+            this.labelMainTimer.Location = new System.Drawing.Point(16, 505);
+            this.labelMainTimer.Name = "labelMainTimer";
+            this.labelMainTimer.Size = new System.Drawing.Size(16, 17);
+            this.labelMainTimer.TabIndex = 19;
+            this.labelMainTimer.Text = "0";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 493);
+            this.ClientSize = new System.Drawing.Size(1762, 560);
+            this.Controls.Add(this.labelMainTimer);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonGo);
             this.Controls.Add(this.buttonDeleteNewProcess);
@@ -255,13 +261,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -272,19 +279,18 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.TextBox TBNameProcess;
         private System.Windows.Forms.TextBox TBCurrentPriority;
-        private System.Windows.Forms.TextBox TB;
+        private System.Windows.Forms.TextBox TBTime;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labeldProcess;
         private System.Windows.Forms.Label labelTimeUsed;
         private System.Windows.Forms.Label labelCurrentPriority;
         private System.Windows.Forms.Label labelNameProcess;
         private System.Windows.Forms.Button buttonCreateNewProcess;
-        private System.Windows.Forms.TextBox TBResouceTime;
-        private System.Windows.Forms.Label labelResourceTime;
-        private System.Windows.Forms.TextBox TBBasePriority;
         private System.Windows.Forms.Label labelBasePriority;
         private System.Windows.Forms.Button buttonDeleteNewProcess;
         private System.Windows.Forms.Button buttonGo;
         private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.Label labelMainTimer;
+        private System.Windows.Forms.ComboBox comboBasePriority;
     }
 }

@@ -10,26 +10,36 @@ namespace List
     {
         public int idProcess;
         public string name;
-        enum status
+        public enum Status
         {
             Ready,
             Active,
             Waiting,
             Zombie
         }
+        public enum Priority
+        {
+            Low,
+            Medium,
+            Height
+        }
         public int timeUsed=0;
-        int timeResults=0;
-        string basePriority;
-        string currentPriority="hight";
+        public int timeResource=0;
+        public Priority basePriority;
+        public Priority currentPriority;
+        public Status currentStatus;
 
-        public Process(int idProcess, string name,string basePriority="low")
+        public Process(int idProcess, string name, int timeResorce,Priority basePriority=Priority.Low)
         {
             this.idProcess = idProcess;
             this.basePriority = basePriority;
+            this.currentPriority = basePriority;
             this.name = name;
+            this.currentStatus = Status.Waiting;
+            this.timeResource = timeResorce;
         }
 
-        private void Go () {
+        public void Go () {
             timeUsed++; 
         }
     }
