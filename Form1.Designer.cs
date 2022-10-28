@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.TBIdProcess = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -56,62 +56,60 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(331, 8);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox1.Location = new System.Drawing.Point(248, 6);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1392, 484);
+            this.listBox1.Size = new System.Drawing.Size(1045, 394);
             this.listBox1.TabIndex = 0;
             // 
             // TBIdProcess
             // 
-            this.TBIdProcess.Location = new System.Drawing.Point(173, 39);
-            this.TBIdProcess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBIdProcess.Location = new System.Drawing.Point(130, 32);
+            this.TBIdProcess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBIdProcess.Name = "TBIdProcess";
             this.TBIdProcess.ReadOnly = true;
-            this.TBIdProcess.Size = new System.Drawing.Size(119, 22);
+            this.TBIdProcess.Size = new System.Drawing.Size(90, 20);
             this.TBIdProcess.TabIndex = 1;
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(1061, 13);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(796, 11);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(443, 466);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(332, 379);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
             // 
             // TBNameProcess
             // 
-            this.TBNameProcess.Location = new System.Drawing.Point(173, 76);
-            this.TBNameProcess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBNameProcess.Location = new System.Drawing.Point(130, 62);
+            this.TBNameProcess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBNameProcess.Name = "TBNameProcess";
-            this.TBNameProcess.Size = new System.Drawing.Size(119, 22);
+            this.TBNameProcess.Size = new System.Drawing.Size(90, 20);
             this.TBNameProcess.TabIndex = 11;
             // 
             // TBCurrentPriority
             // 
-            this.TBCurrentPriority.Location = new System.Drawing.Point(173, 116);
-            this.TBCurrentPriority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBCurrentPriority.Location = new System.Drawing.Point(130, 94);
+            this.TBCurrentPriority.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBCurrentPriority.Name = "TBCurrentPriority";
             this.TBCurrentPriority.ReadOnly = true;
-            this.TBCurrentPriority.Size = new System.Drawing.Size(119, 22);
+            this.TBCurrentPriority.Size = new System.Drawing.Size(90, 20);
             this.TBCurrentPriority.TabIndex = 12;
             // 
             // TBTime
             // 
-            this.TBTime.Location = new System.Drawing.Point(173, 188);
-            this.TBTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TBTime.Location = new System.Drawing.Point(130, 153);
+            this.TBTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBTime.Name = "TBTime";
-            this.TBTime.Size = new System.Drawing.Size(119, 22);
+            this.TBTime.Size = new System.Drawing.Size(90, 20);
             this.TBTime.TabIndex = 13;
             // 
             // panel1
@@ -127,80 +125,77 @@
             this.panel1.Controls.Add(this.TBCurrentPriority);
             this.panel1.Controls.Add(this.TBNameProcess);
             this.panel1.Controls.Add(this.TBIdProcess);
-            this.panel1.Location = new System.Drawing.Point(16, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(12, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 264);
+            this.panel1.Size = new System.Drawing.Size(232, 215);
             this.panel1.TabIndex = 14;
             // 
             // comboBasePriority
             // 
             this.comboBasePriority.FormattingEnabled = true;
             this.comboBasePriority.Items.AddRange(new object[] {
-            "Low",
-            "Medium",
-            "Height"});
-            this.comboBasePriority.Location = new System.Drawing.Point(173, 151);
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBasePriority.Location = new System.Drawing.Point(130, 123);
+            this.comboBasePriority.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBasePriority.Name = "comboBasePriority";
-            this.comboBasePriority.Size = new System.Drawing.Size(121, 24);
+            this.comboBasePriority.Size = new System.Drawing.Size(92, 21);
             this.comboBasePriority.TabIndex = 22;
             // 
             // labelBasePriority
             // 
             this.labelBasePriority.AutoSize = true;
-            this.labelBasePriority.Location = new System.Drawing.Point(25, 154);
-            this.labelBasePriority.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBasePriority.Location = new System.Drawing.Point(19, 125);
             this.labelBasePriority.Name = "labelBasePriority";
-            this.labelBasePriority.Size = new System.Drawing.Size(139, 17);
+            this.labelBasePriority.Size = new System.Drawing.Size(107, 13);
             this.labelBasePriority.TabIndex = 18;
             this.labelBasePriority.Text = "Базовый приоритет";
             // 
             // labelTimeUsed
             // 
             this.labelTimeUsed.AutoSize = true;
-            this.labelTimeUsed.Location = new System.Drawing.Point(31, 191);
-            this.labelTimeUsed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTimeUsed.Location = new System.Drawing.Point(23, 155);
             this.labelTimeUsed.Name = "labelTimeUsed";
-            this.labelTimeUsed.Size = new System.Drawing.Size(133, 17);
+            this.labelTimeUsed.Size = new System.Drawing.Size(103, 13);
             this.labelTimeUsed.TabIndex = 17;
             this.labelTimeUsed.Text = "Время исполнения";
             // 
             // labelCurrentPriority
             // 
             this.labelCurrentPriority.AutoSize = true;
-            this.labelCurrentPriority.Location = new System.Drawing.Point(25, 124);
-            this.labelCurrentPriority.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCurrentPriority.Location = new System.Drawing.Point(19, 101);
             this.labelCurrentPriority.Name = "labelCurrentPriority";
-            this.labelCurrentPriority.Size = new System.Drawing.Size(140, 17);
+            this.labelCurrentPriority.Size = new System.Drawing.Size(107, 13);
             this.labelCurrentPriority.TabIndex = 16;
             this.labelCurrentPriority.Text = "Текущий приоритет";
             // 
             // labelNameProcess
             // 
             this.labelNameProcess.AutoSize = true;
-            this.labelNameProcess.Location = new System.Drawing.Point(24, 85);
-            this.labelNameProcess.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNameProcess.Location = new System.Drawing.Point(18, 69);
             this.labelNameProcess.Name = "labelNameProcess";
-            this.labelNameProcess.Size = new System.Drawing.Size(138, 17);
+            this.labelNameProcess.Size = new System.Drawing.Size(108, 13);
             this.labelNameProcess.TabIndex = 15;
             this.labelNameProcess.Text = "Название процесса";
             // 
             // labeldProcess
             // 
             this.labeldProcess.AutoSize = true;
-            this.labeldProcess.Location = new System.Drawing.Point(75, 48);
-            this.labeldProcess.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labeldProcess.Location = new System.Drawing.Point(56, 39);
             this.labeldProcess.Name = "labeldProcess";
-            this.labeldProcess.Size = new System.Drawing.Size(87, 17);
+            this.labeldProcess.Size = new System.Drawing.Size(69, 13);
             this.labeldProcess.TabIndex = 14;
             this.labeldProcess.Text = "ID процесса";
             // 
             // buttonCreateNewProcess
             // 
-            this.buttonCreateNewProcess.Location = new System.Drawing.Point(16, 293);
-            this.buttonCreateNewProcess.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCreateNewProcess.Location = new System.Drawing.Point(12, 238);
             this.buttonCreateNewProcess.Name = "buttonCreateNewProcess";
-            this.buttonCreateNewProcess.Size = new System.Drawing.Size(308, 46);
+            this.buttonCreateNewProcess.Size = new System.Drawing.Size(231, 37);
             this.buttonCreateNewProcess.TabIndex = 15;
             this.buttonCreateNewProcess.Text = "Создать новый процесс";
             this.buttonCreateNewProcess.UseVisualStyleBackColor = true;
@@ -208,10 +203,9 @@
             // 
             // buttonDeleteNewProcess
             // 
-            this.buttonDeleteNewProcess.Location = new System.Drawing.Point(16, 346);
-            this.buttonDeleteNewProcess.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDeleteNewProcess.Location = new System.Drawing.Point(12, 281);
             this.buttonDeleteNewProcess.Name = "buttonDeleteNewProcess";
-            this.buttonDeleteNewProcess.Size = new System.Drawing.Size(308, 46);
+            this.buttonDeleteNewProcess.Size = new System.Drawing.Size(231, 37);
             this.buttonDeleteNewProcess.TabIndex = 16;
             this.buttonDeleteNewProcess.Text = "Удалить процесс из списка";
             this.buttonDeleteNewProcess.UseVisualStyleBackColor = true;
@@ -219,10 +213,9 @@
             // 
             // buttonGo
             // 
-            this.buttonGo.Location = new System.Drawing.Point(16, 398);
-            this.buttonGo.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonGo.Location = new System.Drawing.Point(12, 323);
             this.buttonGo.Name = "buttonGo";
-            this.buttonGo.Size = new System.Drawing.Size(308, 46);
+            this.buttonGo.Size = new System.Drawing.Size(231, 37);
             this.buttonGo.TabIndex = 17;
             this.buttonGo.Text = "Запуск";
             this.buttonGo.UseVisualStyleBackColor = true;
@@ -230,10 +223,9 @@
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(16, 451);
-            this.buttonStop.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonStop.Location = new System.Drawing.Point(12, 366);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(308, 46);
+            this.buttonStop.Size = new System.Drawing.Size(231, 37);
             this.buttonStop.TabIndex = 18;
             this.buttonStop.Text = "Стоп";
             this.buttonStop.UseVisualStyleBackColor = true;
@@ -242,17 +234,18 @@
             // labelMainTimer
             // 
             this.labelMainTimer.AutoSize = true;
-            this.labelMainTimer.Location = new System.Drawing.Point(16, 505);
+            this.labelMainTimer.Location = new System.Drawing.Point(12, 410);
+            this.labelMainTimer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMainTimer.Name = "labelMainTimer";
-            this.labelMainTimer.Size = new System.Drawing.Size(16, 17);
+            this.labelMainTimer.Size = new System.Drawing.Size(13, 13);
             this.labelMainTimer.TabIndex = 19;
             this.labelMainTimer.Text = "0";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1762, 560);
+            this.ClientSize = new System.Drawing.Size(1322, 455);
             this.Controls.Add(this.labelMainTimer);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonGo);
@@ -261,7 +254,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

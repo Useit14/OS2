@@ -11,32 +11,33 @@ namespace List
        public static Process getNextActive(List<Process> processes)
         {
             Process activeProcess = getActive(processes);
-            if (activeProcess != null)
-            {
-                return activeProcess;
-            }
             foreach(var item in processes)
             {
-                if (item.currentPriority==Process.Priority.Height)
+                if (item == activeProcess)
                 {
-                    return item;
+                   item.currentPriority=item.basePriority;
                 }
+                item.currentPriority++;
             }
-            
-                foreach (var item in processes)
-                {
-                    if (item.currentPriority == Process.Priority.Medium)
-                    {
-                        return item;
-                    }
-                }
+
+            int max = -100000000;
             foreach (var item in processes)
+            
             {
-                if (item.currentPriority == Process.Priority.Low)
+                if(item.currentPriority > max)
+                {
+                    max = item.currentPriority;
+                }
+            }
+            foreach (var item in processes)
+
+            {
+                if (item.currentPriority == max)
                 {
                     return item;
                 }
             }
+
             return null;
         }
 

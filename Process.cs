@@ -17,19 +17,14 @@ namespace List
             Waiting,
             Zombie
         }
-        public enum Priority
-        {
-            Low,
-            Medium,
-            Height
-        }
+
         public int timeUsed=0;
         public int timeResource=0;
-        public Priority basePriority;
-        public Priority currentPriority;
+        public int basePriority;
+        public int currentPriority;
         public Status currentStatus;
 
-        public Process(int idProcess, string name, int timeResorce,Priority basePriority=Priority.Low)
+        public Process(int idProcess, string name, int timeResorce,int basePriority=0)
         {
             this.idProcess = idProcess;
             this.basePriority = basePriority;
