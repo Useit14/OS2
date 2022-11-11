@@ -18,15 +18,26 @@ namespace List
         {
             currentTicks = 0;
             
+
+
         }
 
-        public void Draw(ListBox listBox, Series series)
+        public void Draw(Series series,int flag)
         {
-            Process[] currentArray = list.ToArray();
             series.Points.Clear();
-            for (int i = 0; i < listBox.Items.Count; i++)
+            foreach(var item in list)
             {
-                series.Points.Add(currentArray[i].timeUsed);
+                int valueX=item.idProcess;
+                int valueY;
+                if (flag == 0)
+                {
+                    valueY = item.timeUsed;
+                }
+                else
+                {
+                    valueY = item.currentPriority;
+                }
+                series.Points.AddXY(valueX,valueY);
             }
         }
 
@@ -51,7 +62,7 @@ namespace List
             {
                 if (currentIndex == index)
                 {
-                    list.Remove(item);
+                   list.Remove(item);
                     return;
                 }
                 currentIndex++;
@@ -87,14 +98,23 @@ namespace List
         {
             int current = 0;
             int lastId=0;
-            foreach(var item in list)
+            if (list.Count == 1)
             {
-                if (current == list.Count-1)
-                {
-                    lastId = item.idProcess;
-                }
-                current++;
+                list[0].idProcess = 1;
+                lastId = 1;
             }
+            else
+            {
+                foreach (var item in list)
+                {
+                    if (current == list.Count - 1)
+                    {
+                        lastId = item.idProcess;
+                    }
+                    current++;
+                }
+            }
+            
             return lastId;
         }
 
@@ -107,7 +127,18 @@ namespace List
         {
             RemoveByIndex(idProcess);
         }
-
+        public bool isDispose()
+        {
+            int count=0;
+            foreach (var process in list)
+            {
+                if (process.currentStatus == Status.Ready)
+                {
+                    count++;
+                }
+            }
+            return count == list.Count;
+        }
         public void verifyForTerminated()
         {
             foreach (var process in list)
@@ -127,34 +158,22 @@ namespace List
                 {
                     process.currentStatus = Status.Ready;
                 }
+
             }
-             
+
         }
 
         public void nextTime(Label label)
         {
-            int currentIndex = 0;
-            foreach (var process in list)
-            {
-                if (process.currentStatus == Status.Ready)
+                activeProcess = Scheduler.getNextActive(list);
+                if (activeProcess == null)
                 {
-                    RemoveByIndex(currentIndex);
                     return;
                 }
-                currentIndex++;
-            }
-           verifyForTerminated();
-           verifyForReady();
-
-           activeProcess = Scheduler.getNextActive(list);
-            if (activeProcess == null)
-            {
-                return;
-            }
-            activeProcess.Go();
-            currentTicks++;
-            label.Text = currentTicks.ToString();
-
+                activeProcess.Go();
+                currentTicks++;
+                label.Text = currentTicks.ToString();
+            
         }
     }
 

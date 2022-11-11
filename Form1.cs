@@ -19,19 +19,27 @@ namespace List
         public delegate void SomeDelegat();
         static ProcessManager processManager = new ProcessManager();
         static TimerCallback tm = new TimerCallback(nextTime);
-        Timer timer;
+        static Timer timer;
         Obj obj;
+        static int currentTicks=0;
+        Random random = new Random();
+
+
 
         class Obj
         {
            public Label _labelMainTimer;
            public ListBox _listBox1;
            public Chart _chart1;
-            public Obj(Label labelMainTimer,ListBox listBox1,Chart chart1)
+            public Chart _chart2;
+
+            public Obj(Label labelMainTimer,ListBox listBox1,Chart chart1, Chart chart2)
             {
                 this._labelMainTimer = labelMainTimer;
                 this._listBox1 = listBox1;
                 this._chart1 = chart1;
+                this._chart2 = chart2;
+
             }
 
             public Label getLabel()
@@ -40,26 +48,26 @@ namespace List
             }
         }
 
-        public static void ToList(ListBox listBox1, Chart chart1)
+        public static void ToList(ListBox listBox1, Chart chart1, Chart chart2)
         {
             List<Process> processes = processManager.GetList();
             listBox1.Items.Clear();
             foreach(var process in processes)
             {
-                listBox1.Items.Add($"Идентификатор: {process.idProcess}; Имя: { process.name}; Время использования: {process.timeUsed}; Ресурсное время: {process.timeResource}; Приоритет: {process.basePriority}") ;
+                listBox1.Items.Add($"Идентификатор: {process.idProcess}; Имя: { process.name}; Время использования: {process.timeUsed}; Ресурсное время: {process.timeResource}; Базовый приоритет: {process.basePriority}; Текущий приоритет: {process.currentPriority} ; Статус: {process.currentStatus}") ;
             }
-            processManager.Draw(listBox1, chart1.Series["Series1"]);
-            
+            processManager.Draw(chart1.Series["Series1"],0);
+            processManager.Draw(chart2.Series["Series1"],1);
+
+
         }
 
         private void buttonCreateNewProcess_Click(object sender, EventArgs e)
         {
             try
             {
-                Process.Priority priority;
-                Enum.TryParse(comboBasePriority.SelectedItem.ToString(), out priority);
-                processManager.processAdd(new Process(processManager.getLastId() + 1, TBNameProcess.Text, int.Parse(TBTime.Text), priority));
-                ToList(listBox1, chart1);
+                processManager.processAdd(new Process(processManager.getLastId() + 1, TBNameProcess.Text, int.Parse(TBTime.Text), int.Parse(comboBasePriority.SelectedItem.ToString())));
+                ToList(listBox1, chart1,chart2);
                 TBNameProcess.Text = "";
                 comboBasePriority.SelectedItem = null;
                 TBTime.Text = "";
@@ -74,19 +82,18 @@ namespace List
         {
             int idProcess = listBox1.SelectedIndex;
             processManager.processRemove(idProcess);
-            ToList(listBox1, chart1);
+            ToList(listBox1, chart1, chart2);
             TBNameProcess.Text = "";
             comboBasePriority.SelectedItem=null;
             TBTime.Text = "";
         }
-
         private void buttonGo_Click(object sender, EventArgs e)
         {
-            obj = new Obj(labelMainTimer, listBox1, chart1);
-            timer = new Timer(tm, obj,0,1000);
+            obj = new Obj(labelMainTimer, listBox1, chart1,chart2);
+            timer = new Timer(tm, obj, 0, 1000);
             Process activeProcess = Scheduler.getNextActive(processManager.GetList());
             TBNameProcess.Text = activeProcess.name;
-            comboBasePriority.SelectedText = Enum.GetName(typeof(Process.Priority), activeProcess.currentPriority);
+            comboBasePriority.SelectedText = activeProcess.currentPriority.ToString();
             TBTime.Text = activeProcess.timeUsed.ToString();
         }
 
@@ -100,9 +107,13 @@ namespace List
             Label labelMainTimer = ((List.Form1.Obj)obj)._labelMainTimer;
             ListBox listBox1 = ((List.Form1.Obj)obj)._listBox1;
             Chart chart1 = ((List.Form1.Obj)obj)._chart1;
-
+            Chart chart2 = ((List.Form1.Obj)obj)._chart2;
+            if (processManager.isDispose())
+            {
+                Form1.timer.Dispose();
+            }
             processManager.nextTime(labelMainTimer);
-            ToList(listBox1, chart1);
+            ToList(listBox1, chart1,chart2);
         }
 
     }

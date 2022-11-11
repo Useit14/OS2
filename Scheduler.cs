@@ -8,49 +8,68 @@ namespace List
 {
     internal class Scheduler
     {
-       public static Process getNextActive(List<Process> processes)
-        {
-            Process activeProcess = getActive(processes);
-            foreach(var item in processes)
-            {
-                if (item == activeProcess)
-                {
-                   item.currentPriority=item.basePriority;
-                }
-                item.currentPriority++;
-            }
+       static Process activeProcess = null;
 
+        public Scheduler(List<Process> processes)
+        {
+            getActive(processes);
+        }
+
+        public static Process getNextActive(List<Process> processes)
+        {
+            getActive(processes);
+                foreach (var item in processes)
+                {
+                    if (item.currentStatus!=Process.Status.Ready || item.currentStatus != Process.Status.Waiting || item.currentStatus != Process.Status.Zombie)
+                    {
+                        if (item == activeProcess)
+                        {
+                            item.currentPriority = item.basePriority;
+                        }
+                        else if(item.currentStatus!=Process.Status.Ready)
+                        {
+                            item.currentPriority++;
+                        }
+                    }
+                    
+                }
+
+            return activeProcess;
+        }
+
+        public static void getActive(List<Process> processes)
+        {
             int max = -100000000;
             foreach (var item in processes)
-            
+
             {
-                if(item.currentPriority > max)
+                if (item.currentPriority > max && item.currentStatus!=Process.Status.Ready)
                 {
                     max = item.currentPriority;
                 }
             }
+            activeProcess = processes.Find(x => x.currentPriority == max);
+            if (activeProcess !=null)
+            {
+                activeProcess.currentStatus = Process.Status.Active;
+            }
             foreach (var item in processes)
 
             {
-                if (item.currentPriority == max)
+                if (item!=activeProcess)
                 {
-                    return item;
+                    item.currentStatus = Process.Status.Waiting;
                 }
             }
-
-            return null;
-        }
-
-        private static Process getActive(List<Process> processes)
-        {
             foreach (var item in processes)
+
             {
-                if (item.currentStatus == Process.Status.Active)
+                if (item.timeUsed >= item.timeResource)
                 {
-                    return item;
+                    item.currentStatus = Process.Status.Ready;
                 }
             }
-            return null;
         }
+
     }
 }
